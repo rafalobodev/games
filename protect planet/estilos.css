@@ -52,3 +52,6 @@ body{background-image:URL("corpo.gif");/*mudar corpo fundo por um gif*//*corpo d
 	height:621px;
 	display: none;/*display: tela começa oculta, na hora de clicar jogar sumir a tela*/
 }
+#painel{
+	color: purple;/*muda a cor das letras planeta e contagem de bombas da linha 12 protecttheplanet.html*/
+}
