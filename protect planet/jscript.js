@@ -50,7 +50,7 @@ function criaBomba(){//criar a bomba caindo
 		bomba.setAttributeNode(att2);//appendChild()insere element filho(children) ao pai(parent)auxilia criação DOM(acesso html body)
 		document.body.appendChild(bomba);//usa body (melhor q container) na deletação das bombas
 		contBombas--;//contagem das bombas-- 'var' subtrair cada bomba que é criada
-		painelContBombas.innerHTML="Contagem de Bombas: " + contBombas;
+		painelContBombas.innerHTML="Contagem de Bombas: " + contBombas;/*tentando mudar a cor*/
 	}
 }
 
