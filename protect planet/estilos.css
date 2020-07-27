@@ -1,4 +1,4 @@
-body{/*corpo de pagina*/
+body{background-image:URL("corpo.gif");/*mudar corpo fundo por um gif*//*corpo de pagina*/
 	overflow-x:hidden;/*x e y:tira a barra de rolagem da tela, pois a bomba ta passando da tela*/
 	overflow-y:hidden;
 	background-color:#fff;/*cor de fundo escolhida branca*/
@@ -29,7 +29,7 @@ body{/*corpo de pagina*/
 .tiroJog{/*class criando o tiro do jogo da nave*/
 	width:6px;/*6px tiro pequeno*/
 	height:6px;
-	background-color:#000;
+	background-color:red;/*cor do tiro do jogo*/
 	border-radius:10px;/*border radius para deixar o tiro redondo*/
 	position:absolute;
 }
