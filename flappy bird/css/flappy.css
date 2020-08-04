@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;/*tamanho da caixa:borda forma*/
+}
+
+@font-face {
+    font-family: 'Pixel';/*fonte pixel /*muda corpo site as letras font family*/
+    src: url('../fonts/Pixel.ttf');/*font baixada pronta conectada por css com src importando*/
+}
+
+[wm-flappy] {/*estilo wm-flappy a div css edição*/
+    position: relative;/*posiciona o elemento em relação a si mesmo. Ou seja, o ponto zero será o canto superior esquerdo, e ele começará a contar a partir dali.*/
+    border: 5px solid dodgerblue;/*borda detalhes solido e azul mais forte*/
+    height: 700px;/*altura*/
+    width: 1200px;/*largura*/
+    margin: 15px;/*espaçamento do titulo e div*/
+    background-color: deepskyblue;/*cor azul da tala*/
+    overflow: hidden;/*qualquer item fora da div vai ser escondida */
+}
+
+.passaro {/*passaro bird*/
+    position: absolute;/*absolute para ficar a frente das outras positions visivel dentro da div*/
+    width: 60px;/*largura png passaro*/
+    left: calc(50% - 30px);/*posiciona a esquerda da tela 50%meio da tela menos 30px*/
+}
+
+.par-de-barreiras {/*par de barreiras*/
+    position: absolute;
+    top: 0;/*alinhado com topo*/
+    height: 100%;/*altura ocupa toda*/
+    display: flex;/*convertendo todos os elementos filhos, os Flex Itens, para se comportarem como caixas flexíveis.*/
+    flex-direction: column;/*organiza na vertical a coluna*/
+    justify-content: space-between;/*espaçamento entre os dois*/
+}
+
+.barreira {/*barreira propria alinha mais no centro*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda {/*borda ou ponta do cano verde apenas*/
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #A5E82E);/*cor possui duas misturadas barreira cano*/
+    border: 2px solid #000;/*borda preta fina 2px*/
+}
+
+.barreira .corpo {/*corpo do cano verde*/
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.progresso {/*progresso numeração de pontos*/
+    position: absolute;
+    top: 10px;
+    right: 10px;/*direita e topo */
+    font-family: Pixel;/*fonte pixel letra*/
+    font-size: 70px;/*tamanho do numero*/
+    z-index: 100;/*para a numeração ficar a frente do canos visivel sempre*/
+}
