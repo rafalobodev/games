@@ -10,3 +10,6 @@
 *usando apenas html, css e javascript
 
 ![protect planet](http://g.recordit.co/JnT2FfJ7DF.gif)
+
+https://losfodo.github.io/ - link para jogar!
+[protect planet](https://losfodo.github.io/)
