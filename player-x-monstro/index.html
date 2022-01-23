@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Matador de Monstro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet"><!--Montserrat link da letra pega no google fonts-->
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app"><!--div principal-->
+        <div class="panel scores"><!--divs class panel no total 4, scores do jogador e montro life-->
+            <div class="score">
+                <h1>Jogador</h1>
+                <div class="life-bar"><!--barra de vida a barra em si-->
+                    <div class="life"
+                        :class="{danger: playerLife < 20}"
+                        :style="{width: playerLife + '%'}"></div><!--barra de vida manipulada, danger class quando player for menor que 20 de vida -->
+                </div><!--% como string-->
+                <div>{{ playerLife }}%</div><!--percentual do jogador de sua vida-->
+            </div>
+            <div class="score"><!--barra de vida do monstro-->
+                <h1>Monstro</h1>
+                <div class="life-bar">
+                    <div class="life"
+                        :class="{danger: monsterLife < 20}"
+                        :style="{width: monsterLife + '%'}"></div>
+                </div>
+                <div>{{ monsterLife }}%</div>
+            </div>
+        </div>
+        <div v-if="hasResult" class="panel result"><!--resultado se ganhou ou perdeu, só exibe se tiver 0 a vida-->
+            <div v-if="monsterLife == 0" class="win">Você ganhou!!! :)</div><!--0 do montro o player venceu se não perdeu se 0 do player-->
+            <div v-else class="lose">Você perdeu! :(</div>
+        </div>
+        <div class="panel buttons"><!--botoes de controles de jogo-->
+            <template v-if="running"><!--botoes do jogo, running true jogando liberando os botoes do template-->
+                <button @click="attack(false)"
+                    class="btn attack">Ataque</button><!--resumiu com msm metodo atack se for falso nao tem especial-->
+                <button @click="attack(true)"
+                    class="btn especial-attack">Ataque Especial</button>
+                <button @click="healAndHurt"
+                    class="btn heal">Curar</button><!--botão de curar se-->
+                <button @click="running = false"
+                    class="btn give-up">Desistir</button><!--desistir para o jogo-->
+            </template>
+            <button v-else @click="startGame"
+                class="btn new-game">Iniciar Jogo</button><!--se não iniciar jogo running é inicialmente falso, com click running torna se true-->
+        </div>
+        <div v-if="logs.length"
+            class="panel logs"><!--lista de danos do jogador e montro-->
+            <ul>
+                <li v-for="log in logs"
+                    :class="log.cls"
+                    class="log">{{ log.text }}</li><!--log.text text para exibir o texto dos logs gerados-->
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
